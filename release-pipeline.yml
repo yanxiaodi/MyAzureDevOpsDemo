@@ -11,16 +11,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
-- task: AzureContainerApps@1
-  displayName: Deploy to Azure Container App
+- task: AzureRmWebAppDeployment@4
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
-    acrName: 'devopscrlab'
-    acrUsername: 'devopscrlab'
-    acrPassword: '$(acrpassword)'
-    imageToDeploy: 'devopscrlab.azurecr.io/myazurepipelinesdemo:latest'
-    containerAppName: 'azure-pipeline-demo'
-    resourceGroup: 'devops-lab'
-    targetPort: '443'
-    ingress: 'external'
+    appType: 'webAppContainer'
+    WebAppName: 'azure-pipeline-demo'
+    DockerNamespace: 'devopscrlab.azurecr.io'
+    DockerRepository: 'myazurepipelinesdemo'
+    DockerImageTag: 'latest'
+
