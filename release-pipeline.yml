@@ -19,7 +19,7 @@ steps:
     appSettings: |
       [
         {
-          "name": "DOCKER_REGISTRY_SERVER_USERNAME"",
+          "name": "DOCKER_REGISTRY_SERVER_USERNAME",
           "value": "devopscrlab",
           "slotSetting": false
         },
