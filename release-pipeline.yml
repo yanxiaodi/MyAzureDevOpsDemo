@@ -17,7 +17,9 @@ steps:
     azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
     acrName: 'devopscrlab'
     acrUsername: 'devopscrlab'
-    acrPassword: $(acrpassword)
+    acrPassword: '$(acrpassword)'
     imageToDeploy: 'devopscrlab.azurecr.io/myazurepipelinesdemo:latest'
     containerAppName: 'azure-pipeline-demo'
     resourceGroup: 'devops-lab'
+    targetPort: '8080'
+    ingress: 'external'
