@@ -21,5 +21,4 @@ steps:
     imageToDeploy: 'devopscrlab.azurecr.io/myazurepipelinesdemo:latest'
     containerAppName: 'azure-pipeline-demo'
     resourceGroup: 'devops-lab'
-    targetPort: '8080'
     ingress: 'external'
