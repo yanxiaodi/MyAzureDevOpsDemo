@@ -13,10 +13,12 @@ pool:
 steps:
 
 - task: AzureContainerApps@1
-  displayName: Deploy to Azure Container App
+- task: AzureContainerApps@1
   inputs:
     azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
     acrName: 'devopscrlab'
+    acrUsername: 'devopscrlab'
+    acrPassword: 'mbudG=S+cM4OUTfINl/Ml7KhkcXgf8ht'
     imageToDeploy: 'devopscrlab.azurecr.io/myazurepipelinesdemo:latest'
     containerAppName: 'azure-pipeline-demo'
     resourceGroup: 'devops-lab'
