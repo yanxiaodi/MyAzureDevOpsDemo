@@ -38,4 +38,5 @@ steps:
     DockerNamespace: 'devopscrlab.azurecr.io'
     DockerRepository: 'myazurepipelinesdemo'
     DockerImageTag: 'latest'
+    StartupCommand: 'dotnet MyBasicWebApiDemo.dll'
 
