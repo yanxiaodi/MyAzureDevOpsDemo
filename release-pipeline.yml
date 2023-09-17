@@ -11,6 +11,24 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: AzureAppServiceSettings@1
+  inputs:
+    azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
+    appName: 'azure-pipeline-demo'
+    resourceGroupName: 'devops-lab'
+    appSettings: |
+      [
+        {
+          "name": "DOCKER_REGISTRY_SERVER_USERNAME"",
+          "value": "devopscrlab",
+          "slotSetting": false
+        },
+        {
+          "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+          "value": "$(acrpassword)",
+          "slotSetting": false
+        }
+      ]
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
