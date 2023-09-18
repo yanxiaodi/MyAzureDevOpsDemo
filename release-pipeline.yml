@@ -16,7 +16,12 @@ variables:
   tag: 'latest'
 
 steps:
-
+- task: Docker@2
+  inputs:
+    containerRegistry: 'devopscrlab'
+    command: 'login'
+    repository: $(imageRepository)
+    
 - task: AzureWebAppContainer@1
   displayName: Deploy to Azure Web App for Container
   inputs:
