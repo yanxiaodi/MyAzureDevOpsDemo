@@ -19,11 +19,16 @@ steps:
 - task: AzureAppServiceSettings@1
   displayName: Update settings
   inputs:
-    azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
+    azureSubscription: '<Your Azure subscription>(<guid>)'
     appName: 'azure-pipeline-demo'
     resourceGroupName: 'devops-lab'
     appSettings: |
       [
+        {
+          "name": "DOCKER_REGISTRY_SERVER_URL",
+          "value": "$(containerRegistry)",
+          "slotSetting": false
+        },
         {
           "name": "DOCKER_REGISTRY_SERVER_USERNAME",
           "value": "devopscrlab",
