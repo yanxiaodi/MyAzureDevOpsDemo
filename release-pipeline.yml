@@ -47,5 +47,6 @@ steps:
     azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
     appName: 'azure-pipeline-demo'
     containers: '$(containerRegistry)/$(imageRepository):$(tag)'
+    containerCommand: 'dotnet MyBasicWebApiDemo.dll'
 
 
