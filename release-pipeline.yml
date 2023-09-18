@@ -12,14 +12,14 @@ pool:
 
 variables:
   azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
-  webAppName: 'azure-pipeline-demo'
+  
 
 steps:
 - task: AzureAppServiceSettings@1
   displayName: Update settings
   inputs:
-    azureSubscription: $(azureSubscription)
-    appName: $(webAppName)
+    azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
+    appName: 'azure-pipeline-demo'
     resourceGroupName: 'devops-lab'
     appSettings: |
       [
@@ -38,9 +38,9 @@ steps:
   displayName: Deploy to Web App container
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: $(azureSubscription)
+    azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
     appType: 'webAppContainer'
-    WebAppName: $(webAppName)
+    WebAppName: 'azure-pipeline-demo'
     DockerNamespace: 'devopscrlab.azurecr.io'
     DockerRepository: 'myazurepipelinesdemo'
     DockerImageTag: 'latest'
