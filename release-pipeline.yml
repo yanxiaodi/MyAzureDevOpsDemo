@@ -16,11 +16,25 @@ variables:
   tag: 'latest'
 
 steps:
-- task: Docker@2
+- task: AzureAppServiceSettings@1
+  displayName: Update settings
   inputs:
-    containerRegistry: 'devopscrlab'
-    command: 'login'
-    repository: $(imageRepository)
+    azureSubscription: 'Microsoft Azure Sponsorship(76760d52-2d57-4b56-9ba6-f0f5044f60a6)'
+    appName: 'azure-pipeline-demo'
+    resourceGroupName: 'devops-lab'
+    appSettings: |
+      [
+        {
+          "name": "DOCKER_REGISTRY_SERVER_USERNAME",
+          "value": "devopscrlab",
+          "slotSetting": false
+        },
+        {
+          "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+          "value": "$(acrpassword)",
+          "slotSetting": false
+        }
+      ]
     
 - task: AzureWebAppContainer@1
   displayName: Deploy to Azure Web App for Container
